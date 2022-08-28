@@ -50,42 +50,8 @@ const app = new Vue({
       return this.email.includes('@');
     },
     formIsValid: function() {
-      return this.firstName && this.lastName && this.emailIsValid && this.purchaseAgreementSigned;
-    },
-    submitButtonStyles: function() {
-      if (this.formIsValid) {
-        return {
-          'background-color': '#4c7ef3',
-          cursor: 'pointer'
-        }
-      } else {
-        return {
-          'background-color': 'gray',
-          cursor: 'default'
-        }
-      }
-    },
-    touchedEmailStyles: function() {
-  if (this.email) {
-    return {
-      'border-color': '#bdbcbc',
-      'border-width': '2px'
+      return this.firstName && this.lastName && this.email && this.purchaseAgreementSigned;
     }
-  } else {
-    return {
-      'border-color': '#e0e0e0',
-      'border-width': '2px'
-    }
-  }
-},
-invalidEmailStyles: function() {
-  if (this.email && !this.emailIsValid) {
-    return {
-      'background-color': '#ffeded',
-      'border-color': '#da5252'
-    }
-  }
-}
   },
   watch: {
     specialRequests: function(newRequests, oldRequests) {

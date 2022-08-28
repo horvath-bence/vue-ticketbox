@@ -15,7 +15,7 @@
       <img class="logo" src="https://content.codecademy.com/courses/vue-instances/ticket_logo.svg" alt="logo">
       <h1>TICKETBOX</h1>
     </header>
-    <form v-on:reset="resetFields" v-on:submit.prevent="submitForm"> <!--@submit and v-on:submit are equell-->
+    <form v-on:reset="resetFields" v-on:submit.prevent="submitForm">
       <div class="form-row">
         <div class="form-field">
           <label for="first-name">First Name</label>
@@ -29,7 +29,7 @@
       <div class="form-row">
         <div class="form-field">
           <label for="email">Email</label>
-          <input type="text" id="email" v-model.trim="email" -bind:style="[touchedEmailStyles, invalidEmailStyles]"/>
+          <input type="text" id="email" v-model.trim="email" />
         </div>
       </div>
       <div class="form-row">
@@ -73,7 +73,7 @@
       </div>
       <div class="form-row vertical">
         <label for="requests">Special requests</label>
-        <textarea id="requests" v-model.trim="specialRequests" ></textarea>
+        <textarea id="requests" v-model.trim="specialRequests"></textarea>
       </div>
       <div class="form-row vertical agreement checkbox">
         <fieldset>
@@ -85,11 +85,11 @@
       </div>
       <div class="form-row vertical">
         <label for="signature">Signature</label>
-        <input id="signature" class="signature" v-model="fullName" />
+        <input id="signature" class="signature" />
       </div>
       <div>
         <button type="reset" class="reset">Reset</button>
-        <button type="submit" v-bind:disabled="!formIsValid" v-bind:style="submitButtonStyles">Confirm Tickets</button>
+        <button type="submit" v-bind:disabled="!formIsValid" v-bind:class="{ active: formIsValid }">Confirm Tickets</button>
       </div>
     </form>
   </div>
